@@ -1,0 +1,10 @@
+com\jarexecutor\executor\Executor.class
+com\jarexecutor\models\MicroService.class
+com\jarexecutor\executor\Changer.class
+com\jarexecutor\models\MicroService$MicroServiceBuilder.class
+com\jarexecutor\models\Module$ModuleBuilder.class
+com\jarexecutor\models\Module.class
+com\jarexecutor\logic\MainLogic.class
+com\jarexecutor\executor\Saver.class
+com\jarexecutor\parser\XMLParser.class
+com\jarexecutor\app\Application.class
