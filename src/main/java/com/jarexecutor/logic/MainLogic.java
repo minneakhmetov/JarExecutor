@@ -6,6 +6,7 @@ import com.jarexecutor.models.Module;
 import com.jarexecutor.parser.XMLParser;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class MainLogic {
@@ -33,12 +34,12 @@ public class MainLogic {
         if(toPath.charAt(toPath.length() - 1) != '/')
             toPath.concat("/");
 
-        Map<String, ArrayList<String>> map = parser.parse(fromPath + "pom.xml");
+        List<String> map = parser.parse(fromPath + "pom.xml");
         Saver saver = new Saver(toPath.replace("?", ""));
         Executor executor = new Executor(fromPath);
         System.out.println("Cleaning");
         saver.clean();
-        Module module = executor.execute(map.get(profile));
+        Module module = executor.execute(map);
         saver.save(module);
     }
 }

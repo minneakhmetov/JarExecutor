@@ -18,7 +18,6 @@ public class Saver {
 
     @SneakyThrows
     public void save(Module module){
-        //editDockerCompose(module.getDockerCompose());
         for (File dockerCompose : module.getDockerCompose())
             FileUtils.copyFile(dockerCompose, new File(path + dockerCompose.getName()));
         for (MicroService microService : module.getMicroServiceList()){
@@ -32,13 +31,6 @@ public class Saver {
                 System.out.println("Saving " + microService.getName());
             }
         }
-    }
-
-    @SneakyThrows
-    private void editDockerCompose(File dockerFile){
-        FileWriter writer = new FileWriter(path + "/" + dockerFile.getName(), false);
-        writer.write(changer.editDockerFileToProduction(dockerFile));
-        writer.flush();
     }
 
     @SneakyThrows

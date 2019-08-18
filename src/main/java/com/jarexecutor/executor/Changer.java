@@ -18,17 +18,4 @@ public class Changer {
         }
         return stringBuilder.toString();
     }
-
-    @SneakyThrows
-    public String editDockerFileToProduction(File dockerCompose){
-        StringBuilder stringBuilder = new StringBuilder();
-        Scanner scanner = new Scanner(dockerCompose);
-        while (scanner.hasNext()){
-            String line = scanner.nextLine();
-            stringBuilder.append(line.replace("Dockerfile-local", "Dockerfile-production"));
-            stringBuilder.append("\n");
-        }
-        return stringBuilder.toString();
-    }
-
 }
